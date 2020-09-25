@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>rowid</th>
+                <th>avalue</th>
+                <th>addressout</th>
+                <th>addressin</th>
+                <th>bvalue</th>
+                <th>bit_position</th>
+                <th>buttonpath</th>
+                <th>code</th>
+                <th>decimal</th>
+                <th>defaultvalue</th>
+                <th>delay</th>
+                <th>delta</th>
+                <th>description</th>
+                <th>dimension</th>
+                <th>frequency</th>
+                <th>functioncode</th>
+                <th>grpcategory</th>
+                <th>idgroup</th>
+                <th>idhsvariable</th>
+                <th>idvarmdl</th>
+                <th>idvariable</th>
+                <th>imageoff</th>
+                <th>imageon</th>
+                <th>inserttime</th>
+                <th>isactive</th>
+                <th>iscancelled</th>
+                <th>ishaccp</th>
+                <th>islogic</th>
+                <th>isonchange</th>
+                <th>lastupdate</th>
+                <th>length</th>
+                <th>maximum</th>
+                <th>measureunit</th>
+                <th>minimum</th>
+                <th>priority</th>
+                <th>readwrite</th>
+                <th>signed</th>
+                <th>todisplay</th>
+                <th>type</th>
+                <th>varencoding</th>
+                <th>detail_id</th>
+                <th>devicemodel</th>
+
+
+
+
+
+
+            </tr>
+        </thead>
+    </table>
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/datatables.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+        $.ajax({
+            url: "http://localhost:8080/api/variable",
+            headers: { 'Access-Control-Allow-Origin': '*' },
+            type: 'GET',
+            crossDomain: true,
+            dataType: 'json', // added data type
+            success: function (res) {
+                let dataSet = res
+                $('#example').DataTable({
+                    data: dataSet,
+                    "columns": [
+                        { "data": "id" },
+                        { "data": "rowid" },
+                        { "data": "avalue" },
+                        { "data": "addressout" },
+                        { "data": "addressin" },
+                        { "data": "bvalue" },
+                        { "data": "bit_position" },
+                        { "data": "buttonpath" },
+                        { "data": "code" },
+                        { "data": "decimal" },
+                        { "data": "defaultvalue" },
+                        { "data": "delay" },
+                        { "data": "delta" },
+                        { "data": "description" },
+                        { "data": "dimension" },
+                        { "data": "frequency" },
+                        { "data": "functioncode" },
+                        { "data": "grpcategory" },
+                        { "data": "idgroup" },
+                        { "data": "idhsvariable" },
+                        { "data": "idvarmdl" },
+                        { "data": "idvariable" },
+                        { "data": "imageoff" },
+                        { "data": "imageon" },
+                        { "data": "inserttime" },
+                        { "data": "isactive" },
+                        { "data": "iscancelled" },
+                        { "data": "ishaccp" },
+                        { "data": "islogic" },
+                        { "data": "isonchange" },
+                        { "data": "lastupdate" },
+                        { "data": "length" },
+                        { "data": "maximum" },
+                        { "data": "measureunit" },
+                        { "data": "minimum" },
+                        { "data": "priority" },
+                        { "data": "readwrite" },
+                        { "data": "signed" },
+                        { "data": "todisplay" },
+                        { "data": "type" },
+                        { "data": "varencoding" },
+                        { "data": "detail_id" },
+                        { "data": "devicemodel" },
+                       
+
+                    ]
+                });
+                
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
